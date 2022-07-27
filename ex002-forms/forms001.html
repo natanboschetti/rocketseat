@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        button {
+            float: right;
+            padding: 10px;
+        }
+        form {
+            position: absolute;
+            width: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50% );
+            border: 1px solid;
+            padding: 10px;
+            max-width: 97vw;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" method="post" autocomplete="off" id="form01">
+
+        <fieldset>
+            <legend>Login</legend>
+
+            <label for="icontact">Email:</label>
+            <input required type="email" name="contact" id="icontact" tabindex="1" autofocus placeholder="Type your e-mail"> <br>
+
+            <label for="ipass">Password:</label>
+            <input required type="password" name="password" id="ipass" tabindex="2" pattern="0-9a-fa-F {4,8}" title="Put HEX, minimum 4 characters and maximum 8 characters"  placeholder="type your password">
+        </fieldset>
+
+        <fieldset>
+            <legend>Fruits</legend>
+            <label for="ifruits">Fruits:</label>
+            <input type="text" name="fruits" id="ifruits" tabindex="3" list="fruitsdata" placeholder="Choose a Fruit">
+
+            <datalist id="fruitsdata">
+                <option value="apple"></option>
+                <option value="banana"></option>
+                <option value="mango"></option>
+                <option value="orange"></option>
+                <option value="cherry"></option>
+            </datalist>
+        </fieldset>
+
+        <fieldset>
+            <legend>Choose your interests</legend>
+
+            <div>
+                <input type="checkbox" name="interest" id="icoding" tabindex="4">
+                <label for="icheckbox">Coding</label>
+            </div>
+
+            <div>
+                <input type="checkbox" name="interest" id="imusic" tabindex="5">
+                <label for="icheckbox2">Music</label>
+            </div>
+        </fieldset>
+
+        <button type="submit" id="submit" tabindex="7">Submit</button>
+        <button type="reset" id="reset" tabindex="6" form="form01">Reset</button>
+    </form>
+</body>
+
+</html>
