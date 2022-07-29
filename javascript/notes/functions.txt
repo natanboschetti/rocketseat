@@ -1,0 +1,35 @@
+//Functions
+//declaration / function statement
+function createPhrases() {
+    console.log('Estudar é muito bom')
+    console.log('Paciência e persistência')
+    console.log('Revisão é mãe do aprendizado')
+}
+
+//executando a function
+createPhrases()
+
+//function expression
+//function anonymous
+//function dentro de variável
+const sum = function(number1, number2) { //parameters
+    console.log(number1 + number2)
+}
+sum(4, 3) //arguments
+
+//outro jeito de executar
+const sum = function(number1, number2) { 
+    let total = number1 + number2
+    return total
+}
+
+let number1 = 4
+let number2 = 3
+
+function result() {
+    console.log(`O number1 é ${number1}`)
+    console.log(`O number2 é ${number2}`)
+    console.log(`A soma é ${sum(number1, number2)}`)
+}
+
+result()
