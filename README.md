@@ -1,2 +1,2 @@
 # rocketseat-html-css-js
- Curso Discover RocketSeat
+Discover RocketSeat
