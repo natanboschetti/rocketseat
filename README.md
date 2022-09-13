@@ -1,2 +1,2 @@
-# rocketseat-html-css-js
-Discover RocketSeat
+# rocketseat
+RocketSeat - cursos - eventos
