@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+body {
+    background-image: url(../images/Fundo.jpg) ;
+    background-position: top center ;
+    background-size: 100% auto; /*horizontal% automática na vertical*/
+    background-repeat: no-repeat;
+    background-color: #121214;
+}
+
+main * { /*Tudo dentro do main*/
+    border: 1px solid red ;
+}
+
+main {
+    max-width: 580px;
+    width: 90%; /*Para tela meno que 580px, o % é relativo a largura da tela*/
+    margin: auto;
+}
