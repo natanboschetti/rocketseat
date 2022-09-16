@@ -21,11 +21,42 @@ body {
     background-color: #121214;
 }
 
+header {
+    height: calc(120px + 32px); /*Todo tamanho de um elemento html se adapta de acordo com o conteúdo, na animação fromTop a imagem "demora para aparecer", portanto o header se adapta a imagem quando ela aparece, assim "jogando os outros elementos para baixo, mas, definindo já um tamanho para o header não há esse problema"*/
+    padding-top: 32px;
+    text-align: center;
+}
+
+header div { /*a borda é da img é na verdade o background-color da div , pois a img está dentro da div*/
+    margin: auto;
+    width: 120px;
+    border-radius: 50%;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+
+    display: flex; /*faz com que o padding funcione corretamente, deixando o elemento dentro da div mais centralizado*/
+    padding: 4px; /*separa a img da borda em 4px*/
+
+    transition: transform .3s; /*primeiro define onde será a transition, no caso em tranform como está abaixo na div:hover e leve 0.3s*/
+}
+
+header div:hover {
+    transform: scale(1.1); /*quando passar o mouse a escala será de 1.1*/
+    
+}
+
+header img {
+    height: 100%; /*100% seria o tamanho da div 120px*/
+    width: 100%;
+    border-radius: 50%;
+
+}
+
+
+
 main {
-    margin-top: 32px;
     max-width: 580px;
     width: 90%; /*Para tela meno que 580px, o % é relativo a largura da tela*/
-    margin: auto;
+    margin: 32px auto; /*cima, baixo / lateral */
 
     display: grid; /**/
     gap: 24px; /*vai na direção definida pelo flex, mas nesse caso o grid não altera e deixa no padrão uma abaixo da outra sem precisar configurar*/
@@ -36,6 +67,23 @@ main {
     flex-direction: column; serve para colocar as section uma abaixo da outra
     */
 }
+
+main section {
+    animation: fromBottom .7s backwards; /*backwards volta todas as propriedades, porque por padrão primeiro surgiria os elementos e depois as propriedades da animation*/
+}
+
+main section:nth-child(1) { /*nth = numeração, pegar o primeiro filho da section dentro do main nesse caso o primeiro filho (1)*/
+    animation-delay: 0;
+}
+
+main section:nth-child(2) {
+    animation-delay: .3s ;
+}
+
+main section:nth-child(3) {
+    animation-delay: .6s ;
+}
+
 
 section {
     color: white;
@@ -73,6 +121,14 @@ section ul {
     flex-wrap: wrap; /*quando chegar no limite de elementos na caixa os elementos ao invés de continuar indo para o lado vão para baixo como quebra de linha*/
 }
 
+section ul li {
+    transition: transform .3s;
+}
+
+section ul li:hover {
+    transform: scale(1.1);
+}
+
 ul.game-list img {
     width: 90px; /*a largura é configurada automaticamente*/
     border-radius: 8px;
@@ -81,4 +137,36 @@ ul.game-list img {
 ul.channel-list img {
     border-radius: 50%;
     width: 70px;
+    border: 1px solid #443E59;
+}
+
+/*Animation, precisa de 2 coisas*/ /*Fazendo com que a imagem de perfil tenha uma animation de cima para baixo quando a página carregar*/
+
+header div {
+    animation: fromTop .7s backwards; /*backwards volta as propriedades da animation lá embaixo*/
+    animation-delay: .2s; /*tempo para acontecer*/
+}
+
+@keyframes fromTop { /*nome que quiser, @keyframes seria como uma function que puxa essa animation quando for chamada pelo nome*/
+    from { /*de*/
+        opacity: 0;
+        transform: translateY(-30px); /*vai partir de -30px de onde está*/
+    } 
+
+    to { /*para*/
+        opacity: 1; /*1, veja por completo*/
+        transform: translateY(0); /*0, porque ele vai terminar onde já estava*/
+    } 
+}
+
+@keyframes fromBottom { /*contrário da anterior */
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
