@@ -1,5 +1,18 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body * {
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 160%;
+}
+
 body {
     background-image: url(../images/Fundo.jpg) ;
     background-position: top center ;
@@ -8,12 +21,64 @@ body {
     background-color: #121214;
 }
 
-main * { /*Tudo dentro do main*/
-    border: 1px solid red ;
-}
-
 main {
+    margin-top: 32px;
     max-width: 580px;
     width: 90%; /*Para tela meno que 580px, o % é relativo a largura da tela*/
     margin: auto;
+
+    display: grid; /**/
+    gap: 24px; /*vai na direção definida pelo flex, mas nesse caso o grid não altera e deixa no padrão uma abaixo da outra sem precisar configurar*/
+
+
+    /*
+    display: flex; automaticamente as sections ficam uma ao lado da outra
+    flex-direction: column; serve para colocar as section uma abaixo da outra
+    */
+}
+
+section {
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+section div {
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+
+}
+
+
+section h2 {
+    letter-spacing: -0.47px; /*espaço entre as letras*/
+}
+
+section p {
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+}
+
+ul {
+    list-style: none;
+}
+
+section ul {
+    display: flex; /*permite mudar o posicionamento das caixas dentro da <ul>*/
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap; /*quando chegar no limite de elementos na caixa os elementos ao invés de continuar indo para o lado vão para baixo como quebra de linha*/
+}
+
+ul.game-list img {
+    width: 90px; /*a largura é configurada automaticamente*/
+    border-radius: 8px;
+}
+
+ul.channel-list img {
+    border-radius: 50%;
+    width: 70px;
 }
