@@ -32,7 +32,7 @@ function calculateBalance() {
         balanceMessage = 'negativo'
     }
 
-    console.log(`Seu saldo é ${balanceMessage}: R$${total}`)
+    console.log(`Seu saldo é ${balanceMessage}: R$${total.toFixed(2)}`)
 }
 
 calculateBalance()
