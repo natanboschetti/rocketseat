@@ -1,5 +1,4 @@
-# Rocketseat
-Discover - Introdução a programação
+# Discover - Introdução a programação
 
 # Tecnologias
 - HTML
